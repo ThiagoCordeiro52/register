@@ -2,6 +2,9 @@ let minutes = 0;
 let seconds = 0;
 let isCounting = false;
 let interval;
+let workedHours = 0;
+let workedMinutes = 0;
+let workedSeconds = 0;
 
 const [
   minuteLeftElement,
@@ -9,6 +12,10 @@ const [
   secondLeftElement,
   secondRightElement,
 ] = document.querySelectorAll(".count-container div span");
+
+const workedTimeDisplay = document.querySelector(
+  ".completed-challenges-container .worked-time"
+);
 
 const buttonElement = document.querySelector(".count-button");
 
@@ -40,6 +47,26 @@ function startCount() {
 
 function stopCount() {
   clearInterval(interval);
+  if (workedSeconds + seconds >= 60) {
+    workedMinutes += 1;
+  } else {
+    workedSeconds += seconds;
+  }
+
+  if (workedMinutes + minutes >= 60) {
+    workedHours += 1;
+    workedMinutes += workedMinutes + minutes - 60;
+  }
+
+  if (workedMinutes + minutes < 60) {
+    workedMinutes += minutes;
+  }
+
+  workedTimeDisplay.textContent = `${String(workedHours).padStart(
+    2,
+    "0"
+  )}h${String(workedMinutes).padStart(2, "0")}min`;
+
   minutes = 0;
   seconds = 0;
   updateDisplay();
