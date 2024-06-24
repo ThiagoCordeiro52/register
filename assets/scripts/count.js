@@ -67,6 +67,19 @@ function stopCount() {
     "0"
   )}h${String(workedMinutes).padStart(2, "0")}min`;
 
+  fetch('http://localhost:3333/activity_logs', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      activityId: Number(localStorage.getItem('selectedActivityId')),
+      workedHours,
+      workedMinutes: Number(minutes),
+      workedSeconds: Number(seconds),
+    })
+  });
+
   minutes = 0;
   seconds = 0;
   updateDisplay();

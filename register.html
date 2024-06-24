@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <title>Register | Controle seu tempo de trabalho com facilidade</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Rajdhani:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/global.css" />
+    <link rel="stylesheet" href="assets/styles/register.css" />
+  </head>
+  <body>
+    <main id="activity-register">
+      <form id="activity-form">
+        <h2>Registrar atividade</h2>
+        <div class="form-group">
+          <label for="activity-name">Nome da Atividade</label>
+          <input type="text" placeholder="ex.: academia, trabalho..." id="activity-name" name="activity-name" required />
+        </div>
+        <div class="form-group">
+          <label for="goal-daily">Meta Diária (minutos)</label>
+          <input type="number" id="goal-daily" name="goal-daily" required />
+        </div>
+        <div class="form-group">
+          <label for="goal-weekly">Meta Semanal (minutos)</label>
+          <input type="number" id="goal-weekly" name="goal-weekly" required />
+        </div>
+        <button type="submit" class="submit-button">Registrar</button>
+      </form>
+    </main>
+  </body>
+</html>

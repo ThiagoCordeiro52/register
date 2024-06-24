@@ -1,0 +1,18 @@
+.create-activity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+.create-activity a {
+  background-color: var(--green);
+  color: var(--white-100);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.create-activity a:hover {
+  opacity: 0.8;
+}

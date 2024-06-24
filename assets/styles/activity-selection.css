@@ -1,0 +1,44 @@
+#activity-selection-section {
+  margin-top: 20px;
+}
+
+#activity-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.activity-item {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.activity-item:hover {
+  background-color: #f1f1f1;
+}
+
+.activity-item.selected {
+  background-color: #4CAF50;
+  color: white;
+}
+
+@media(width >= 768px) {
+  #activity-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(width >= 1024px) {
+  #activity-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(width >= 1440px) {
+  #activity-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

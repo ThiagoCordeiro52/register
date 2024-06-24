@@ -1,0 +1,46 @@
+#activity-register {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#activity-form h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#activity-form {
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  padding: 5rem;
+}
+  
+.form-group {
+  margin: 1rem 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.form-group input {
+  padding-left: 0.2rem;
+  width: 100%;
+  background-color: var(--);
+}
+
+#activity-form button {
+  background-color: var(--green);
+  color: var(--white-100);
+  border: 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+#activity-form button:hover {
+  opacity: 0.8;
+} 
