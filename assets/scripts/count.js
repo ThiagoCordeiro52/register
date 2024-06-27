@@ -45,15 +45,17 @@ function loadActivity() {
     .then((activity) => {
       dailyGoalMinutes = activity.goalDaily;
       weeklyGoalMinutes = activity.goalWeekly;
-      today = new Date();
-      lastDate = activity.logs[activity.logs.length - 1].date;
-      alert(today.getDate());
-      alert(lastDate);
-      alert(today.getDate());
-      if (lastDate.getDate() === today.getDate()) {
-        workedHours = activity.lastActivityLog.workedHours;
-        workedMinutes = activity.lastActivityLog.workedMinutes;
-        workedSeconds = activity.lastActivityLog.workedSeconds;
+
+      const today = new Date();
+      const lastLog = activity.logs[activity.logs.length - 1];
+      const lastDate = new Date(lastLog.date);
+
+      if (lastDate.getDate() === today.getDate() &&
+          lastDate.getMonth() === today.getMonth() &&
+          lastDate.getFullYear() === today.getFullYear()) {
+        workedHours = lastLog.workedHours;
+        workedMinutes = lastLog.workedMinutes;
+        workedSeconds = lastLog.workedSeconds;
         calculateRemainingTime();
       } else {
         alert('Não há registros de atividade para hoje');
